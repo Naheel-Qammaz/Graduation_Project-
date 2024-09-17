@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ```mermaid
 ---
@@ -46,3 +47,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# Graduation_Project-
+>>>>>>> origin/main
