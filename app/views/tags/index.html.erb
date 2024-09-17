@@ -2,15 +2,16 @@
 
 <% content_for :title, "Tags" %>
 
-<h1>Tags</h1>
+<h1 data-e2e="tag-heading">Tags</h1>
 
 <div id="tags">
   <% @tags.each do |tag| %>
-    <%= render tag %>
+    
+    <%= render tag  %>
     <p>
-      <%= link_to "Show this tag", tag %>
+      <%= link_to "Show this tag", tag,  data: { e2e: "show-tag-#{tag.id}" } %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New tag", new_tag_path %>
+<%= link_to "New tag", new_tag_path , data: { e2e: "new-tag" }%>

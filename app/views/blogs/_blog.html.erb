@@ -1,15 +1,18 @@
 <div id="<%= dom_id blog %>">
-  <p>
+<p data-e2e="blog-title-<%= blog.id %>">
+
     <strong>Title:</strong>
     <%= blog.title %>
   </p>
 
-  <p>
+  <p data-e2e="blog-body-<%= blog.id %>">
+
     <strong>Body:</strong>
     <%= blog.body %>
   </p>
 
-  <p>
+  <p data-e2e="blog-user-<%= blog.id %>">
+
     <strong>User:</strong>
     <%= blog.user_id %>
   </p>

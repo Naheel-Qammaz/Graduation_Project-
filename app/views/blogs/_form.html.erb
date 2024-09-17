@@ -5,7 +5,8 @@
 
       <ul>
         <% blog.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li data-e2e="blog-error-message">
+          <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -13,12 +14,12 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title , data: { e2e: "blog-title-field"}%>
   </div>
 
   <div>
     <%= form.label :body, style: "display: block" %>
-    <%= form.text_field :body %>
+    <%= form.text_field :body, data: { e2e: "blog-text-field"} %>
   </div>
 
   <div>
@@ -31,6 +32,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit data: { e2e: blog.new_record? ? "submit-create-blog" : "submit-update-blog" }  %>
   </div>
 <% end %>

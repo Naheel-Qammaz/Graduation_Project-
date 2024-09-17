@@ -6,20 +6,22 @@
     <div>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+          
+          <li data-e2e="error-message"><%= message %></li>
+
         <% end %>
       </ul>
     </div>
   <% end %>
   <div>
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email , data: { e2e: 'email-field' }%>
   </div>
   <div>
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, data: { e2e: 'password-field' } %>
   </div>
   <p>
-    <%= f.submit "Login" %>
+    <%= f.submit "Login", data: { e2e: 'login-submit' } %>
   </p>
 <% end %>

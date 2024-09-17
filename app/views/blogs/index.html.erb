@@ -7,10 +7,12 @@
 <div id="blogs">
   <% @blogs.each do |blog| %>
     <%= render blog %>
+    <div data-e2e="blog-<%= blog.id %>">
     <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
+    <%= link_to "Show this blog", blog, data: { e2e: "show-blog-#{blog.id}" }%>
+  </p>
+</div>
+<% end %>
 </div>
 
-<%= link_to "New blog", new_blog_path %>
+<%= link_to "New blog", new_blog_path , data: { e2e: "new-blog-link" }  %>

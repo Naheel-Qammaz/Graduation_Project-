@@ -5,7 +5,8 @@
 
       <ul>
         <% tag.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+         <li data-e2e="form-error-message">
+          <%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -13,10 +14,10 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , data: { e2e: "tag-name-input" }%>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit data: { e2e: tag.new_record? ? "submit-create-tag" : "submit-update-tag" } %>
   </div>
 <% end %>

@@ -11,7 +11,9 @@ class SessionsController < ApplicationController
        flash[:notice] = "Login Successful"
        redirect_to dashboard_path
      else
+      @user ||= User.new(user_params)
        flash[:alert] = "Login Failed"
+       @user.errors.add(:base, "Invalid email or password")
        render :new, status: :unprocessable_entity
      end
   end
